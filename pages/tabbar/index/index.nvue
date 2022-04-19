@@ -1,19 +1,41 @@
 <template>
 	<view class="page">
-		首页
-		<text class="iconfont" style="font-size: 200rpx">&#xe6dc</text>
+		<!-- 导航栏 -->
+		<view class="bg-light">
+			<!-- 状态栏 -->
+			<view :style="`height:${statusBarHeight}px`"></view>
+			<!-- 导航 -->
+			<view class="w-100 flex align-center justify-between border" style="height: 90rpx;">
+				<!-- 左边 -->
+				<view class="font-md ml-3">
+					<!-- 标题 -->
+					<!-- 微信(10) -->
+				</view>
+				<!-- 右边 -->
+				<view class="flex">
+					<free-icon-button :icon="'\ue6e3'"/>
+					<free-icon-button :icon="'\ue682'"/>
+				</view>
+			</view>
+		</view>
 	</view>
 </template>
 
 <script>
+	import freeIconButton from '@/components/free-ui/free-icon-button.vue'
 	export default {
+		components:{
+			freeIconButton
+		},
 		data() {
 			return {
-				title: 'Hello'
+				statusBarHeight:0
 			}
 		},
 		onLoad() {
-			
+			// #ifdef APP-PLUS-NVUE
+			this.statusBarHeight = plus.navigator.getStatusbarHeight();
+			// #endif
 		},
 		methods: {
 
