@@ -1,0 +1,25 @@
+<template>
+	<view class="page">
+		首页
+		<text class="iconfont" style="font-size: 200rpx">&#xe6dc</text>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				title: 'Hello'
+			}
+		},
+		onLoad() {
+			
+		},
+		methods: {
+
+		}
+	}
+</script>
+	
+<style>
+</style>
